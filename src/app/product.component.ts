@@ -9,6 +9,8 @@ import { Product } from "./product.model";
 
 export class ProductComponent {
     model: Model = new Model();
+    targetName: string = "Kayak";
+
     constructor(ref: ApplicationRef) {
         (<any>window).appRef = ref;
         (<any>window).model = this.model;
@@ -26,5 +28,7 @@ export class ProductComponent {
     getProductCount(): number {
         return this.getProducts().length;
     }
-    targetName: string = "Kayak";
+    getKey(index: number, product: Product) {
+        return product.id;
+    }
 }

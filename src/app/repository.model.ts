@@ -38,6 +38,10 @@ export class Model {
       this.products.splice(index, 1);
     }
   }
+  swapProduct(): void {
+    let p = this.products.shift();
+    this.products.push(new Product(p.id, p.name, p.category, p.price));
+  }
 
   private generateID(): number {
     let candidate = 100;
